@@ -1,0 +1,117 @@
+body{
+	margin-top: 30px;
+}
+/*Login/register styles*/
+#userForm{
+	width: 240px;
+	margin: auto;
+	height: 40px;
+	margin-top: 20%;
+}
+.userformclass, .userformregisterclass, .loginregister{
+	display: none;
+	padding: 20px;
+	border: 3px solid darkgray ;
+	border-radius: 8px; 
+	background-color: lightblue;
+}
+.loginregister{
+	padding-left: 19%;
+}
+#userForm label{
+	margin-left: 25%;
+}
+.go-back-login{
+	margin-top: -10px;
+}
+.login-button{
+	margin-left: 19%;
+	margin-top: -10px;
+}
+.register-button{
+	margin-left: 15%;
+	margin-top: -10px;
+}
+/*Chat and interface styles*/
+#message{
+	width: 75%;
+	display: inline-block;
+}
+#chat{
+	height: 275px;
+	background-color: white;
+	overflow-y: scroll;
+}
+#messageArea{
+	background-color: whitesmoke;
+	display: none;
+	vertical-align: bottom;
+	width: 100%;
+	height: 100%;
+}
+.container{
+	width: 95%;
+	height: 95%;
+	margin-left: 3.25%;
+	margin-top: 2.5%;
+	position: relative;
+}
+.well{
+	height: 100%;
+	overflow-y: scroll;	
+}
+.sent-message{
+	padding: 0.5px;
+	min-width: 5%;
+	word-wrap:break-word;
+}
+.sent-pm-message{
+	padding: 0.5px;
+	min-width: 5%;
+	word-wrap:break-word;
+	color: blue;
+    font-weight: 600;
+}
+.system-message{
+	padding: 0.5px;
+	min-width: 5%;
+	word-wrap:break-word;
+	color: green;s
+}
+.request-fight{
+	cursor: pointer;
+    margin-top: -2px;
+    margin-right: -10px;
+    text-align: center;
+    background-color: lightpink;
+    float: right;
+    width: 60px;
+    border: 2px solid darkgray;
+    border-radius: 4px;
+}
+.enter-message{
+	padding: 0;
+	position: absolute;
+	bottom: 0;
+	right: 1.8%;
+	border: 2px solid darkgray;
+	border-radius: 6px;
+	width: 81.8%;
+}
+.users-online{
+	padding: 0;
+}
+.sweeper{
+	text-align:  center;
+}
+.scale-chat{
+	width: 100%;
+    height: 12px;
+    background-color: lightgray;
+    border-radius: 2px;
+    text-align: center;
+    font-size: 9px;
+}
+.mouseDown{
+	cursor: n-resize;
+}

@@ -1,0 +1,75 @@
+<html>
+	<head>
+		<title>IO Chaty</title>
+		<script
+			  src="https://code.jquery.com/jquery-3.1.1.min.js"
+			  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+			  crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!-- 		<link rel="stylesheet" href="../cssjs/minesweeper.css">
+ -->		<link rel="stylesheet" href="../cssjs/styles.css">
+		<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+		<script src="../cssjs/jquery.cookie.js"></script>
+		<script src="../cssjs/scripts.js"></script>
+	</head>
+	<body>
+		<div>
+			<div class="container">
+				<div class="row" id="userFormArea">
+					<div class="col-md-12">
+						<form id="userForm">
+							<div class='loginregister'>
+								<input type="button" class="btn btn-primary go-login" value="Login" />
+								<input type="button" class="btn btn-primary go-register" value="Register" />
+							</div>
+							<div class="form-group userformclass">
+								<label>Enter username</label>
+								<input class="form-control" id="username"/>
+								<br />
+								<label>Enter password</label>
+								<input type="password" class="form-control" id="password"/>
+								<br />
+								<input type="submit" class="btn btn-primary login-button" value="Login" />
+								<input type="button" class="btn btn-primary go-back-login" value="Back" />
+							</div>
+							<div class="form-group userformregisterclass">
+								<label>Enter username</label>
+								<input class="form-control" id="register-username"/>
+								<br />
+								<label>Enter password</label>
+								<input type="password" class="form-control" id="register-password"/>
+								<br />
+								<input type="submit" class="btn btn-primary register-button" value="Register" />
+								<input type="button" class="btn btn-primary go-back-login" value="back" />
+							</div>
+						</form>
+					</div>
+				</div>
+				<div id="messageArea" class="row">
+					<div class="col-md-2 users-online">
+						<div class="well">
+							<h2>Online Users</h2>
+							<ul class="list-group" id="users"> </ul>
+						</div>
+					</div>
+					<div class='sweeper'>
+						    
+					</div>
+					<div class="col-md-10 enter-message">
+						<div class="scale-chat">&#x2191;&#x2193;</div>
+						<div class="chat" id="chat"></div>
+						<form id="messageForm">
+							<div class="form-group">
+								<label>Enter message</label>
+								<input type="text" class="form-control" id="message"/>
+								<input type="submit" class="btn btn-primary" value="Send Message" />
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

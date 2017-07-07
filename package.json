@@ -1,0 +1,35 @@
+{
+  "name": "minesweeper",
+  "version": "1.0.0",
+  "description": "Minesweeper realtime competitive game",
+  "main": "server.js",
+  "scripts": {
+    "test": "hola"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edza345/io-tut.git"
+  },
+  "keywords": [
+    "game",
+    "socket"
+  ],
+  "author": "edgars pavuls",
+  "license": "ISC",
+  "dependencies": {
+    "socket.io":"*",
+    "express":"*",
+    "mysql":"*",
+    "csprng":"*",
+    "node-gyp":"*",
+    "bcrypt":"*",
+    "cookie-parser":"*",
+    "express-session":"*",
+    "morgan":"*",
+    "jsdom":"*"
+  },
+  "bugs": {
+    "url": "https://github.com/edza345/io-tut/issues"
+  },
+  "homepage": "https://github.com/edza345/io-tut#readme"
+}
