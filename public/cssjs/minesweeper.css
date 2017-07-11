@@ -1,106 +1,121 @@
-/* Dashboard and Controls */
+/* minesweeper.css */
 
-#dashboard {
-    text-align: left;
-    margin-top: 30px;
+html, body {
+   margin: 0;
+   padding: 0;
 }
 
-.controls {
-    width: 438px; /* (numCols * 44) - 2 */
-    margin: 0 auto;
-    font-weight: bold;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    border-radius: 2px;
-    position: relative;    
+body {
+   font-size: 1em;
+   font-family: Arial, Helvetica, sans-serif;
+   padding: 1em;
 }
 
-#difficulty {
-    list-style: none;
-    padding: 0;
-    padding-left: 10px;
-    display: inline-block;
+.hide {
+   display: none;
 }
 
-#difficulty li {
-    background-color: #bbb;
-    color: #fff;
-    cursor: pointer;
-    display : inline-block;
-
-    font-size: 14px;
-
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    border-radius: 2px;
-
-    text-align: center;
-    padding: 6px 8px;
+.invisible {
+   visibility: hidden;
 }
 
-#difficulty li:hover { background-color: #333; }
-#difficulty li.selected { background-color: #777; }
-
-#board {
-    min-width: 440px;
-    margin-bottom: 50px;
+.ajax-loading {
+   display: inline-block;
+   padding-left: 1em;
 }
 
-.space {
-    background-color: #bbb;
-    display: inline-block;
-
-    border: 2px solid none;
-    margin: 2px;
-    cursor: pointer;
-
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    border-radius: 2px;
-
-    width: 38px;
-    height: 38px;
-
-    font-size: 22px;
-    line-height: 38px;
+h1 {
+   margin: 0 0 0.3em 0;
 }
 
-.safe {
-    background-color: #eee;
-    color: #777;
+.gh { float: right; }
+
+.board-wrap {
+   -moz-user-select: none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   user-select: none;
+   cursor: default;
 }
 
-.bomb {
-    color: #333;
+.board-wrap .row {
+   padding: 0;
+   margin: 0;
+   height: 24px;
 }
 
-.space .fa { line-height: 40px; }
-.space .fa-bomb { font-size: 24px; }
-.space .fa-smile-o { font-size: 26px; }
-
-.space:hover { background-color: #777; }
-
-#new-game {
-    width: 420px;
-    background-color: #777;
-    color: #fff;
-    font-size: 38px;
-    padding: 15px 0;
-    cursor: pointer;
+.board-wrap .row .cell {
+   list-style: none;
+   padding: 0;
+   margin: 0;
+   display: inline-block;
+   width: 18px;
+   height: 18px;
+   border: 3px outset #aaa;
+   background-color: #c9c9c9;
+   vertical-align: middle;
+   text-align: center;
+   line-height: 19px;
+   font-weight: bold;
 }
 
-#new-game:hover { background-color: #333; }
-
-#feedback {
-    display: inline-block;
-    font-size: 30px;
-    padding-top: 4px;
-    right: 0;
-    position:absolute;
+.board-wrap .row li:hover {
+   background-color: #dee6ed;
 }
 
-#title {
-    margin-top: 10px;
-    font-size: 30px;
-    color: #777;
+.board-wrap .row .cell.open {
+}
+
+.board-wrap .row .cell.number,
+.board-wrap .row .cell.open {
+   border: 1px solid grey;
+   padding: 2px;
+}
+
+.board-wrap .row .cell.number {
+   background-color: rgb(213, 187, 191);
+}
+
+.board-wrap .row .cell.flagged {
+   background-color: red;
+   background-color: rgba(255, 61, 61, 0.82);
+}
+
+.board-wrap .row .cell.question {
+   background-color: lightblue;
+}
+
+.board-wrap .row .cell.explode {
+   color: red;
+   background-color: white;
+}
+
+.board-wrap .cell.unknown:active {
+   border-style: inset;
+}
+
+.board-wrap .cell.test{
+   border-style: inset;
+}
+
+.cell.blown {
+   opacity: 1.0;
+}
+
+.cell.unblown {
+   opacity: 0.5;
+}
+
+.cell[data-number="1"] {
+   color: blue;
+}
+.cell[data-number="2"] {
+   color: darkgreen;
+}
+.cell[data-number="3"] {
+   color: red;
+}
+
+.game_settings, .game_actions, .game_status {
+   margin: 10px 0;
 }

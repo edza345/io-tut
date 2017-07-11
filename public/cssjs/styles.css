@@ -38,7 +38,7 @@ body{
 	display: inline-block;
 }
 #chat{
-	height: 275px;
+	height: 75px;
 	background-color: white;
 	overflow-y: scroll;
 }
@@ -102,7 +102,11 @@ body{
 	padding: 0;
 }
 .sweeper{
-	text-align:  center;
+	overflow: hidden;
+    position: relative;
+    width: 83%;
+    display: inline-block;
+	height: 370px;
 }
 .scale-chat{
 	width: 100%;
@@ -114,4 +118,29 @@ body{
 }
 .mouseDown{
 	cursor: n-resize;
+}
+/*Sweeper styles*/
+#minesweeper{
+	display: inline-block;
+    height: 240px;
+    width: 240px; 
+    position: absolute;
+    float: left;
+    margin-left: 7%;
+}
+.board-wrap .row {
+ height: auto;
+}
+.board-wrap .row .cell {
+	width: 11%;
+    height: 11%;
+}
+.game_settings{
+	display: none;
+}
+#bestTimes{
+	display: none;
+}
+.start-game{
+	width: 100%;
 }

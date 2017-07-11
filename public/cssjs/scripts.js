@@ -186,14 +186,42 @@ $(document).ready(function () {
     //CHANGE CHAT SIZE ON DRAG EVENT
     var oldYPos = 0;
 	var isDragging = false;
+	minesweeper = new MineSweeper();
+	$(".start-game").click(function() {
+		$("#minesweeper").show();
+		minesweeper.init();
+	});
+    minesweeper.init();
 	$(document).mousemove(function(event) {	
 		if (isDragging){
 		var difference = event.pageY - oldYPos;
 			if(parseInt($("#chat").css("height")) > 40){
 				$("#chat").css("height", '-='+difference);
+				$(".sweeper").css("height", '+='+difference);
+				$("#minesweeper").css("height", '+='+difference);
+				$('#minesweeper').css('width', '+='+difference);
+				if($('#minesweeper').width() > 180){
+					if(parseInt($(".cell.number").css("padding-top")) == 0){
+						$('.cell.number').css('padding-top', '+='+2);
+					}
+				}
+				else if(parseInt($(".cell.number").css("padding-top")) == 2){
+					$('.cell.number').css('padding-top', '-='+2);
+				}
 			}
 			else if(difference < 0){
 				$("#chat").css("height", '-='+difference);
+				$(".sweeper").css("height", '+='+difference);
+				$("#minesweeper").css("height", '+='+difference);
+				$('#minesweeper').css('width', '+='+difference);
+				if($('#minesweeper').width() > 180){
+					if(parseInt($(".cell.number").css("padding-top")) == 0){
+						$('.cell.number').css('padding-top', '+='+2);
+					}
+				}
+				else if(parseInt($(".cell.number").css("padding-top")) == 2){
+					$('.cell.number').css('padding-top', '-='+2);
+				}
 				standStillYPos = oldYPos;
 			}
 		}
