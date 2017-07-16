@@ -76,7 +76,13 @@ body{
 	padding: 0.5px;
 	min-width: 5%;
 	word-wrap:break-word;
-	color: green;s
+	color: green;
+}
+.game-message{
+	padding: 0.5px;
+	min-width: 5%;
+	word-wrap:break-word;
+	color: orange;
 }
 .request-fight{
 	cursor: pointer;
@@ -84,6 +90,17 @@ body{
     margin-right: -10px;
     text-align: center;
     background-color: lightpink;
+    float: right;
+    width: 60px;
+    border: 2px solid darkgray;
+    border-radius: 4px;
+}
+.already-ingame{
+	cursor: default;
+    margin-top: -2px;
+    margin-right: -10px;
+    text-align: center;
+    background-color: lightgray;
     float: right;
     width: 60px;
     border: 2px solid darkgray;
@@ -127,6 +144,15 @@ body{
     position: absolute;
     float: left;
     margin-left: 7%;
+    margin-right: 7%;
+}
+#minesweeper2{
+	display: inline-block;
+    height: 240px;
+    width: 240px; 
+    position: absolute;
+    right: 0;
+    margin-right: 7%
 }
 .board-wrap .row {
  height: auto;
@@ -143,4 +169,91 @@ body{
 }
 .start-game{
 	width: 100%;
+}
+.new-challange{
+	font-size: 16px;
+    padding-top: 4px;
+    padding-left: 7px;
+    width: 100%;
+    height: 33px;
+    background-color: lightpink;
+    border: 1px solid red;
+    border-radius: 4px;
+}
+.decline-challange{
+	background-color: lightgray;
+    border: 1px solid gray;
+    height: 29px;
+    width: 90px;
+    margin-left: 5px;
+    margin-top: -3px;
+    float: right;
+    border-radius: 4px;
+    font-size: 16px;
+}
+.accept-challange{
+	background-color: lightgreen;
+    border: 1px solid green;
+    height: 29px;
+    border-radius: 4px;
+    width: 90px;
+    margin-left: 5px;
+    margin-top: -3px;
+    float: right;
+    font-size: 16px;
+}
+/*Start game countdown*/
+.countdown{
+	position: absolute;
+    width: 60%;
+    height: 100px;
+    background-color: lightgray;
+    margin-top: 100px;
+    margin-left: 20%;
+    border: 2px solid gray;
+    border-radius: 4px;
+}
+.my-side{
+	display: inline-block;
+    width: 35%;
+    margin-left: 5%;
+}
+.vs-clock{
+	display: inline-block;
+    width: 20%;
+    text-align: center;
+    position: absolute;
+}
+.opponent-side{
+	display: inline-block;
+    width: 35%;
+    margin-right: 5%;
+    float: right;
+    text-align: right;
+}
+.my-name{
+	font-size: 24px;
+    font-weight: 600;
+}
+.my-rank{
+	font-size: 12px;
+    color: green;
+}
+.opponent-name{
+	font-size: 24px;
+    font-weight: 600;
+}
+.opponent-rank{
+	font-size: 12px;
+    color: green;
+}
+.vs-vs{
+	font-size: 20px;
+    font-style: italic;
+    color: #ff0016;
+    font-weight: 800;
+}
+.vs-counter{
+	font-size: 24px;
+    color: red;
 }

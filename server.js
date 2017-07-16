@@ -152,7 +152,8 @@ io.sockets.on('connection', function(socket){
 					username: result[0].username,
 					userId: result[0].id,
 					rank: result[0].rank,
-					points: result[0].points
+					points: result[0].points,
+					gamestatus: 1
 				}
 				bcrypt.compare(rawPassword, result[0].password, function(err, res) {
 					if(res){
@@ -229,10 +230,50 @@ io.sockets.on('connection', function(socket){
 		}else{
 			callback(true);
 			socket.username = data;
+			socket.gamestatus = 1;
 			users[socket.username] = socket;
 			updateUsernames();
 			io.sockets.emit('new message', {msg: 'User '+data+' has Joined ', user: 'System', isPm: 3});
-			console.log(users);
 		}
-	})
+	});
+	// mine seeper BE functionality
+	socket.on('mine defuse', function(data){
+		if(data){
+			users[data.opponent].emit('update opponent mines', data.minefield);
+		}else{
+		
+		}
+	});
+	socket.on("challange player", function(data){
+		if(data.opponentName in users){
+			if(data.isRequest){
+				if(users[data.opponentName].gamestatus == 2){
+					users[data.myInfo.username].emit('user already ingame', data.opponentName);
+				}else{
+					users[data.opponentName].emit('new challange', data.myInfo);				
+				}
+			}
+			if(data.isResponse){
+				if(data.isAccept){
+					var forMe = {
+						opponentName: data.opponentName,
+						opponentRank: data.opponentRank
+					}
+					var forOpponent = {
+						opponentName: data.myInfo.username,
+						opponentRank: data.myInfo.rank
+					}
+					users[data.opponentName].emit('start game', forOpponent);
+					users[data.myInfo.username].emit('start game', forMe);
+					users[data.opponentName].gamestatus = 2;
+					users[data.myInfo.username].gamestatus = 2;
+				}else{
+					users[data.opponentName].emit('challange denied', data.myInfo.username);
+				}	
+			}
+			//Need to add functionality to check for opponent game status, if in ggame then return fail code 1
+		}else{
+			users[data.myInfo.username].emit('user not online', data.opponentName);
+		}
+	});
 });
